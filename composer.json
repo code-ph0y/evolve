@@ -1,0 +1,40 @@
+{
+    "name": "evolve/evolve",
+    "description": "test",
+    "type": "test",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "Ross Moroney",
+            "email": "code.ph0y@googlemail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+       {
+         "type": "vcs",
+         "url": "https://github.com/code-ph0y/framework"
+       }
+    ],
+    "require": {
+        "ppi/framework": "dev-master",
+        "ppi/distribution-module": "dev-master",
+        "ppi/datasource-module": "^1.0"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::installAssets",
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::permissionDirs",
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-update-cmd": [
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::installAssets",
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::permissionDirs",
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+    "prefer-stable": true,
+    "branch-alias": {
+        "dev-master": "2.1-dev"
+    }
+}
