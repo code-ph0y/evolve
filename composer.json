@@ -1,0 +1,46 @@
+{
+    "name": "evolve/evolve-app",
+    "description": "The Evolve Application - A pre-built application around the PPI Framework.",
+    "license": "MIT",
+    "keywords": ["framework", "ppi", "symfony", "zend", "doctrine", "laravel", "fuelphp", "mongo", "pdo", "ppi", "skeletonapp", "bootstrap", "html5", "jquery", "mustache"],
+    "type": "library",
+    "authors": [
+          {
+              "name": "Ross Moroney",
+              "email": "code_ph0y@googlemail.com"
+          }
+    ],
+    "require": {
+        "ppi/framework": "^2.1",
+        "ppi/distribution-module": "dev-master",
+        "ppi/datasource-module": "1.0.2"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::installAssets",
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::permissionDirs",
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-update-cmd": [
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::installAssets",
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::permissionDirs",
+            "PPI\\DistributionModule\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+    "extra": {
+        "ppi-app-dir": "app",
+        "ppi-web-dir": "public",
+        "ppi-assets-install": "symlink-relative"
+    },
+    "config": {
+        "component-dir": "public/libs"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "branch-alias": {
+        "dev-master": "2.1.x-dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    }
+}
